@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoDesignPatterns", "CursoDesignPatterns\CursoDesignPatterns.csproj", "{F4EECF35-3907-4AF0-A55D-62D8C76F09EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patterns", "Patterns\Patterns.csproj", "{3714724E-684D-461C-B71D-15A8DFD3DACA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4EECF35-3907-4AF0-A55D-62D8C76F09EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4EECF35-3907-4AF0-A55D-62D8C76F09EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4EECF35-3907-4AF0-A55D-62D8C76F09EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4EECF35-3907-4AF0-A55D-62D8C76F09EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3714724E-684D-461C-B71D-15A8DFD3DACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3714724E-684D-461C-B71D-15A8DFD3DACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3714724E-684D-461C-B71D-15A8DFD3DACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3714724E-684D-461C-B71D-15A8DFD3DACA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
