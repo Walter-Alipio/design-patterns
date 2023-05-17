@@ -3,7 +3,7 @@ public class CalculadorDeImpostos
 {
     public void RealizaCalculo(Orcamento orcamento, Imposto imposto)
     {
-        double icms = imposto.Calcula(orcamento);
-        System.Console.WriteLine(icms);
+        double valorImposto = imposto.Calcula(orcamento);
+        System.Console.WriteLine(valorImposto);
     }
 }
