@@ -3,6 +3,9 @@ using Patterns;
 
 public class IKCV : TemplateDeImpostCondicional
 {
+  public IKCV() : base() { }
+  public IKCV(Imposto outroImposto) : base(outroImposto) { }
+
   protected override bool DeveUsarMaximaTaxaçao(Orcamento orcamento)
   {
     return orcamento.Valor >= 500 && TemItemMaiorQue100ReaisNo(orcamento);

@@ -3,7 +3,10 @@ using Patterns.Strategy;
 
 public abstract class TemplateDeImpostCondicional : Imposto
 {
-  public double Calcula(Orcamento orcamento)
+  public TemplateDeImpostCondicional(Imposto outroImposto) : base(outroImposto) { }
+  public TemplateDeImpostCondicional() : base() { }
+
+  public override double Calcula(Orcamento orcamento)
   {
     if (DeveUsarMaximaTaxaçao(orcamento))
     {

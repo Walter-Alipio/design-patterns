@@ -1,7 +1,5 @@
 ﻿using Patterns;
 using Patterns.Strategy;
-// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
 
 #region StrategyPattern
 // Imposto icms = new ICMS();
@@ -31,17 +29,33 @@ foreach (var item in orcamento.Itens)
   orcamento.Valor += item.Valor;
 }
 
-double desconto = calculador.Calcula(orcamento);
-System.Console.WriteLine(desconto);
+// double desconto = calculador.Calcula(orcamento);
+// System.Console.WriteLine(desconto);
 #endregion
 
 #region TemplateMethod 
-var icpp = new ICPP();
-var ikcv = new IKCV();
+// var icpp = new ICPP();
+// var ikcv = new IKCV();
 
-var resultadoIcpp = icpp.Calcula(orcamento);
-var resultadoIkcv = ikcv.Calcula(orcamento);
+// var resultadoIcpp = icpp.Calcula(orcamento);
+// var resultadoIkcv = ikcv.Calcula(orcamento);
 
-System.Console.WriteLine($"ICCP: {resultadoIcpp}");
-System.Console.WriteLine($"IKCV: {resultadoIkcv}");
+// System.Console.WriteLine($"ICCP: {resultadoIcpp}");
+// System.Console.WriteLine($"IKCV: {resultadoIkcv}");
+#endregion
+
+#region Decorator
+Imposto impostoComplexo = new ISS(new ICMS());
+
+Orcamento novoOrcamento = new Orcamento(500.0);
+
+double valor = impostoComplexo.Calcula(orcamento);
+
+// Console.WriteLine(valor);
+
+Imposto impostoMuitoAlto = new ImpostoMuitoAlto(new ISS(new ICMS(new IKCV())));
+Orcamento orcamentoMuitoAlto = new Orcamento(200);
+
+double valorMuitoAlto = impostoMuitoAlto.Calcula(orcamento);
+System.Console.WriteLine(valorMuitoAlto);
 #endregion

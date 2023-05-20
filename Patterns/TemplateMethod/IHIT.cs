@@ -3,6 +3,8 @@ using Patterns;
 
 public class IHIT : TemplateDeImpostCondicional
 {
+  public IHIT() : base() { }
+  public IHIT(Imposto outroImposto) : base(outroImposto) { }
   protected override bool DeveUsarMaximaTaxaçao(Orcamento orcamento)
   {
     IList<String> noOrcamento = new List<String>();
