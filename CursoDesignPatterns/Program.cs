@@ -1,5 +1,6 @@
 ﻿using Patterns;
 using Patterns.Builder;
+using Patterns.Observer;
 using Patterns.Strategy;
 
 #region StrategyPattern
@@ -78,7 +79,14 @@ using Patterns.Strategy;
 
 #region Builder
 
-NotaFiscalBuilder criador = new NotaFiscalBuilder();
+NotaFiscalBuilder criador = new NotaFiscalBuilder(new List<AcaoAposGerarNota>()
+{
+  new EnviadorDeEmail(),
+  new EnviadorDeSMS(),
+  new NotaFiscalDAO(),
+  new Multiplicador(3)
+});
+
 //Fluent interface | Method chaining 
 criador.ParaEmpresa("Caelum ensino e inovação")
   .ComCnpj("23.156.456/0001-12")

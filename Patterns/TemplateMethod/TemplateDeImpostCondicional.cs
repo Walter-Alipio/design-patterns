@@ -1,5 +1,4 @@
 using Patterns;
-using Patterns.Strategy;
 
 public abstract class TemplateDeImpostCondicional : Imposto
 {
