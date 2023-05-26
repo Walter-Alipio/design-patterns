@@ -1,4 +1,5 @@
 ﻿using Patterns;
+using Patterns.Builder;
 using Patterns.Strategy;
 
 #region StrategyPattern
@@ -61,16 +62,32 @@ using Patterns.Strategy;
 #endregion
 
 #region State
-Orcamento reforma = new Orcamento(500);
-System.Console.WriteLine(reforma.Valor);
+// Orcamento reforma = new Orcamento(500);
+// System.Console.WriteLine(reforma.Valor);
 
-reforma.AplicaDescontoExtra();
-System.Console.WriteLine(reforma.Valor);
+// reforma.AplicaDescontoExtra();
+// System.Console.WriteLine(reforma.Valor);
 
-reforma.Aprova();
-reforma.AplicaDescontoExtra();
-System.Console.WriteLine(reforma.Valor);
-reforma.Finaliza();
+// reforma.Aprova();
+// reforma.AplicaDescontoExtra();
+// System.Console.WriteLine(reforma.Valor);
+// reforma.Finaliza();
 
 
+#endregion
+
+#region Builder
+
+NotaFiscalBuilder criador = new NotaFiscalBuilder();
+//Fluent interface | Method chaining 
+criador.ParaEmpresa("Caelum ensino e inovação")
+  .ComCnpj("23.156.456/0001-12")
+  .ComItem(new ItemNota("item 1", 100.0))
+  .ComItem(new ItemNota("item 2", 200.0))
+  .NaDataAtual()
+  .ComObservacoes("Uma obs qualquer");
+
+NotaFiscal nf = criador.Constroi();
+System.Console.WriteLine(nf.ValorBruto);
+System.Console.WriteLine(nf.RazaoSocial);
 #endregion
