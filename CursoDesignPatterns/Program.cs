@@ -15,7 +15,7 @@ using Patterns.Strategy;
 // calculador.RealizaCalculo(orcamento, iss);
 #endregion
 
-#region ChainOfResponsability
+#region ChainOfResponsibility
 // CalculadorDeDescontos calculador = new CalculadorDeDescontos();
 // Orcamento orcamento = new Orcamento(0);
 
