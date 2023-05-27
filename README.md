@@ -1,6 +1,7 @@
 # Design Patterns
 
-Estudo de design patterns em C#. Material visto durante curso na plataforma da Alura como parte da formação "Boas práticas em C#".
+Estudo de design patterns em C#. Material visto durante curso na plataforma da Alura como parte da formação "Boas práticas em C#". <br>
+O projeto `Patterns` contém as implementações, enquanto que o projeto `CursoDeignPatterns` contém os testes para cada pattern.
 
 ## Padrões vistos durante o curso:
 
