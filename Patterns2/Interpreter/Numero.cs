@@ -14,7 +14,7 @@ public class Numero : IExpressao
     return this.Valor;
   }
 
-  public void Aceita(ImpressoraVisitor impressora)
+  public void Aceita(IVisitor impressora)
   {
     impressora.ImprimeNumero(this);
   }

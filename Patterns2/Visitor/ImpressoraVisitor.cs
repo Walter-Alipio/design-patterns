@@ -1,4 +1,5 @@
-public class ImpressoraVisitor
+
+public class ImpressoraVisitor : IVisitor
 {
   public void ImprimeSoma(Soma soma)
   {

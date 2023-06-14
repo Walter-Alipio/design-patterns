@@ -11,7 +11,7 @@ public class Mutiplicacao : IExpressao
   public IExpressao Esquerda { get; }
   public IExpressao Direita { get; }
 
-  public void Aceita(ImpressoraVisitor impressora)
+  public void Aceita(IVisitor impressora)
   {
     impressora.ImprimeMutiplicacao(this);
   }

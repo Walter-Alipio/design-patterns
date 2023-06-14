@@ -9,7 +9,7 @@ public class RaizQuadrada : IExpressao
 
   public IExpressao Numero { get; }
 
-  public void Aceita(ImpressoraVisitor impressora)
+  public void Aceita(IVisitor impressora)
   {
     throw new NotImplementedException();
   }

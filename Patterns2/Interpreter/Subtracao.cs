@@ -16,7 +16,7 @@ public class Subtracao : IExpressao
     return this.Esquerda.Avalia() - this.Direita.Avalia();
   }
 
-  public void Aceita(ImpressoraVisitor impressora)
+  public void Aceita(IVisitor impressora)
   {
     impressora.ImprimeSubtracao(this);
   }
