@@ -1,7 +1,10 @@
-﻿using Patterns;
+﻿using System.Linq.Expressions;
+using Patterns;
 using Patterns.Builder;
 using Patterns.Observer;
 using Patterns.Strategy;
+using Patterns2.Flyweight;
+using Patterns2.Memento;
 
 #region StrategyPattern
 // Imposto icms = new ICMS();
@@ -79,23 +82,85 @@ using Patterns.Strategy;
 
 #region Builder
 
-NotaFiscalBuilder criador = new NotaFiscalBuilder(new List<AcaoAposGerarNota>()
-{
-  new EnviadorDeEmail(),
-  new EnviadorDeSMS(),
-  new NotaFiscalDAO(),
-  new Multiplicador(3)
-});
+// NotaFiscalBuilder criador = new NotaFiscalBuilder(new List<AcaoAposGerarNota>()
+// {
+//   new EnviadorDeEmail(),
+//   new EnviadorDeSMS(),
+//   new NotaFiscalDAO(),
+//   new Multiplicador(3)
+// });
 
-//Fluent interface | Method chaining 
-criador.ParaEmpresa("Caelum ensino e inovação")
-  .ComCnpj("23.156.456/0001-12")
-  .ComItem(new ItemNota("item 1", 100.0))
-  .ComItem(new ItemNota("item 2", 200.0))
-  .NaDataAtual()
-  .ComObservacoes("Uma obs qualquer");
+// //Fluent interface | Method chaining 
+// criador.ParaEmpresa("Caelum ensino e inovação")
+//   .ComCnpj("23.156.456/0001-12")
+//   .ComItem(new ItemNota("item 1", 100.0))
+//   .ComItem(new ItemNota("item 2", 200.0))
+//   .NaDataAtual()
+//   .ComObservacoes("Uma obs qualquer");
 
-NotaFiscal nf = criador.Constroi();
-System.Console.WriteLine(nf.ValorBruto);
-System.Console.WriteLine(nf.RazaoSocial);
+// NotaFiscal nf = criador.Constroi();
+// System.Console.WriteLine(nf.ValorBruto);
+// System.Console.WriteLine(nf.RazaoSocial);
+#endregion
+
+#region Flyweight
+//Essa sequencia funciona apenas em ambiente Windows devido ao uso do Console.Beep
+// internal class Program
+// {
+//   private static void Main(string[] args)
+//   {
+//     var notas = new NotasMusicais();
+//     IList<INota> musica = new List<INota>()
+//     {
+//       notas.Pega("do"),
+//       notas.Pega("re"),
+//       notas.Pega("mi"),
+//       notas.Pega("fa"),
+//       notas.Pega("fa"),
+//       notas.Pega("fa")
+//     };
+
+//     var piano = new Piano();
+//     piano.Toca(musica);
+//   }
+// }
+
+#endregion
+
+#region Memento
+
+// HistoricosDeEstadosDoContrato historico = new();
+// Contrato contrato = new Contrato(DateTime.Now, "Victor", TipoContrato.Novo);
+
+// historico.Adiciona(contrato.SalvaEstado());
+
+// System.Console.WriteLine(contrato.Tipo);
+
+// contrato.Avanca();
+// historico.Adiciona(contrato.SalvaEstado());
+
+// contrato.Avanca();
+// historico.Adiciona(contrato.SalvaEstado());
+
+// System.Console.WriteLine(contrato.Tipo);
+// System.Console.WriteLine(historico.Pega(0).Contrato.Tipo);
+
+#endregion
+
+
+#region Interpreter e o Visitor
+// (1 + 10) + (20 - 10)
+var esquerda = new Soma(new Numero(1), new Numero(10));
+var direita = new Subtracao(new Numero(20), new Numero(10));
+var soma = new Soma(esquerda, direita);
+
+Console.WriteLine(soma.Avalia());
+
+// var soma = Expression.Add(Expression.Constant(10), Expression.Constant(100));
+// Func<int> funcaoMatematica = Expression.Lambda<Func<int>>(soma).Compile();
+// System.Console.WriteLine(funcaoMatematica());
+
+ImpressoraVisitor impressora = new ImpressoraVisitor();
+soma.Aceita(impressora);
+
 #endregion
