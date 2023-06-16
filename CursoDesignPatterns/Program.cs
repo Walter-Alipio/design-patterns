@@ -3,6 +3,7 @@ using Patterns;
 using Patterns.Builder;
 using Patterns.Observer;
 using Patterns.Strategy;
+using Patterns2.Brigdges;
 using Patterns2.Flyweight;
 using Patterns2.Memento;
 
@@ -150,17 +151,28 @@ using Patterns2.Memento;
 
 #region Interpreter e o Visitor
 // (1 + 10) + (20 - 10)
-var esquerda = new Soma(new Numero(1), new Numero(10));
-var direita = new Subtracao(new Numero(20), new Numero(10));
-var soma = new Soma(esquerda, direita);
 
-Console.WriteLine(soma.Avalia());
+// var esquerda = new Soma(new Numero(1), new Numero(10));
+// var direita = new Subtracao(new Numero(20), new Numero(10));
+// var soma = new Soma(esquerda, direita);
 
-// var soma = Expression.Add(Expression.Constant(10), Expression.Constant(100));
-// Func<int> funcaoMatematica = Expression.Lambda<Func<int>>(soma).Compile();
-// System.Console.WriteLine(funcaoMatematica());
+// Console.WriteLine(soma.Avalia());
 
-ImpressoraVisitor impressora = new ImpressoraVisitor();
-soma.Aceita(impressora);
+// // var soma = Expression.Add(Expression.Constant(10), Expression.Constant(100));
+// // Func<int> funcaoMatematica = Expression.Lambda<Func<int>>(soma).Compile();
+// // System.Console.WriteLine(funcaoMatematica());
+
+// ImpressoraVisitor impressora = new ImpressoraVisitor();
+// soma.Aceita(impressora);
+
+#endregion
+
+
+#region Bridges
+
+var mensagem = new MensagemAdminstrador("Salomão");
+var enviador = new EnviaPorEmail();
+mensagem.Enviador = enviador;
+mensagem.Envia();
 
 #endregion
