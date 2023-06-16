@@ -4,6 +4,7 @@ using Patterns.Builder;
 using Patterns.Observer;
 using Patterns.Strategy;
 using Patterns2.Brigdges;
+using Patterns2.Command;
 using Patterns2.Flyweight;
 using Patterns2.Memento;
 
@@ -170,9 +171,23 @@ using Patterns2.Memento;
 
 #region Bridges
 
-var mensagem = new MensagemAdminstrador("Salomão");
-var enviador = new EnviaPorEmail();
-mensagem.Enviador = enviador;
-mensagem.Envia();
+// var mensagem = new MensagemAdminstrador("Salomão");
+// var enviador = new EnviaPorEmail();
+// mensagem.Enviador = enviador;
+// mensagem.Envia();
 
+#endregion
+
+#region Command
+
+var fila = new FilaDeTrabalho();
+var pedido1 = new Pedido("Mauro", 100);
+var pedido2 = new Pedido("Célia", 200);
+
+fila.Adiciona(new PagaPedido(pedido1));
+fila.Adiciona(new PagaPedido(pedido2));
+
+fila.Adiciona(new FinalizaPedido(pedido1));
+
+fila.Processa();
 #endregion
