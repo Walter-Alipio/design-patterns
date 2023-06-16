@@ -1,8 +1,10 @@
 ﻿using System.Linq.Expressions;
+using System.Xml.Serialization;
 using Patterns;
 using Patterns.Builder;
 using Patterns.Observer;
 using Patterns.Strategy;
+using Patterns2.Adapter;
 using Patterns2.Brigdges;
 using Patterns2.Command;
 using Patterns2.Flyweight;
@@ -149,7 +151,6 @@ using Patterns2.Memento;
 
 #endregion
 
-
 #region Interpreter e o Visitor
 // (1 + 10) + (20 - 10)
 
@@ -168,7 +169,6 @@ using Patterns2.Memento;
 
 #endregion
 
-
 #region Bridges
 
 // var mensagem = new MensagemAdminstrador("Salomão");
@@ -180,14 +180,28 @@ using Patterns2.Memento;
 
 #region Command
 
-var fila = new FilaDeTrabalho();
-var pedido1 = new Pedido("Mauro", 100);
-var pedido2 = new Pedido("Célia", 200);
+// var fila = new FilaDeTrabalho();
+// var pedido1 = new Pedido("Mauro", 100);
+// var pedido2 = new Pedido("Célia", 200);
 
-fila.Adiciona(new PagaPedido(pedido1));
-fila.Adiciona(new PagaPedido(pedido2));
+// fila.Adiciona(new PagaPedido(pedido1));
+// fila.Adiciona(new PagaPedido(pedido2));
 
-fila.Adiciona(new FinalizaPedido(pedido1));
+// fila.Adiciona(new FinalizaPedido(pedido1));
 
-fila.Processa();
+// fila.Processa();
+
+#endregion
+
+#region Adapter
+
+var cliente = new Cliente();
+cliente.Nome = "Samuel";
+cliente.Endereco = "Rua Vergueiro";
+cliente.DataNascimento = DateTime.Now;
+
+var xml = new GeradorXml().GeraXml(cliente);
+
+System.Console.WriteLine(xml);
+
 #endregion
