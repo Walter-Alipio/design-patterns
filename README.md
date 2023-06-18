@@ -3,7 +3,7 @@
 Estudo de design patterns em C#. Material visto durante curso na plataforma da Alura como parte da formação "Boas práticas em C#". <br>
 O projeto `Patterns` contém as implementações, enquanto que o projeto `CursoDeignPatterns` contém os testes para cada pattern.
 
-## Padrões vistos durante o curso:
+## Padrões vistos durante a parte 1 da formação:
 
 ### Strategy:
 
@@ -28,3 +28,45 @@ O projeto `Patterns` contém as implementações, enquanto que o projeto `CursoD
 ### Builder:
 
 - O padrão Builder separa a construção de um objeto complexo de sua representação, permitindo que o mesmo processo de construção possa criar diferentes representações. Isso ajuda a evitar construtores complexos e oferece uma maneira mais flexível de criar objetos.
+
+# Parte 2
+
+### Factory
+
+- Facotory é padrão de projeto que fornece uma interface para criar objetos de uma classe, permitindo a criação de diferentes tipos de objetos sem expor a lógica de criação.
+
+### Flyweight
+
+- Flyweight é um padrão de projeto que visa minimizar o uso de memória compartilhando objetos com características similares, reduzindo a quantidade de instâncias necessárias.
+
+### Memento
+
+- Memento é um padrão de projeto que permite capturar e restaurar o estado interno de um objeto sem violar a encapsulação, fornecendo um mecanismo para desfazer ou reverter operações.
+
+### Interpreter
+
+- Interpreter é um padrão de projeto que define a forma de interpretar ou avaliar expressões em uma linguagem específica, permitindo a implementação de um sistema de processamento de linguagens.
+
+### Visitor
+
+- Visitor é um padrão de projeto que separa algoritmos de uma estrutura de objetos, permitindo adicionar novas operações sem modificar as classes dos objetos visitados.
+
+### Bridgie
+
+- Bridgie é um padrão de projeto que separa uma abstração de sua implementação, permitindo que ambas variem independentemente.
+
+### Command
+
+- Commando é um padrão de projeto que encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações, enfileirar ou registrar solicitações e suportar operações de desfazer.
+
+### Adapter
+
+- Adapter é um padrão de projeto que permite a interoperabilidade entre interfaces incompatíveis, envolvendo um objeto com uma interface em uma interface esperada pelo cliente.
+
+### Facade
+
+- Facade é um padrão de projeto que fornece uma interface simplificada para um conjunto complexo de subsistemas, facilitando o uso desses subsistemas pelos clientes.
+
+### Singleton
+
+- Singleton é um padrão de projeto que garante a existência de apenas uma instância de uma classe, fornecendo um ponto global de acesso a essa instância.
