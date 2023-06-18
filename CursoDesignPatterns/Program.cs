@@ -7,6 +7,7 @@ using Patterns.Strategy;
 using Patterns2.Adapter;
 using Patterns2.Brigdges;
 using Patterns2.Command;
+using Patterns2.FacadeSingleton;
 using Patterns2.Flyweight;
 using Patterns2.Memento;
 
@@ -195,13 +196,24 @@ using Patterns2.Memento;
 
 #region Adapter
 
-var cliente = new Cliente();
-cliente.Nome = "Samuel";
-cliente.Endereco = "Rua Vergueiro";
-cliente.DataNascimento = DateTime.Now;
+// var cliente = new Cliente();
+// cliente.Nome = "Samuel";
+// cliente.Endereco = "Rua Vergueiro";
+// cliente.DataNascimento = DateTime.Now;
 
-var xml = new GeradorXml().GeraXml(cliente);
+// var xml = new GeradorXml().GeraXml(cliente);
 
-System.Console.WriteLine(xml);
+// System.Console.WriteLine(xml);
+
+#endregion
+
+#region Facade e Singleton
+
+// string cpf = "123.456.789-93";
+
+// var fachada = new EmpresaFacadeSingleton().Instancia;
+
+// fachada.BuscaClientePorCPF(cpf);
+
 
 #endregion
